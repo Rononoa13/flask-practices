@@ -1,0 +1,5 @@
+.env
+.saas/git
+.vscode/
+.DS_Store
+teclado-SaaS.code-workspace
