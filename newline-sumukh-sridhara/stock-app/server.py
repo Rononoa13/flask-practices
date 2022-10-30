@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import requests
 from config import YOUR_API_KEY
 
@@ -16,11 +16,12 @@ def fetch_price(ticker):
 
 @app.route('/')
 def home_page():
-    return 'Try /stock/AAPL'
+    return render_template('index.html')
 
 
 # http://localhost:5000/stock/AAPL
 @app.route('/stock/<ticker>')
 def stock(ticker):
     price = fetch_price(ticker)
-    return f"The price of {ticker} is {price}"
+    return render_template('stock_quote.html',
+                           ticker=ticker, stock_price=price)
