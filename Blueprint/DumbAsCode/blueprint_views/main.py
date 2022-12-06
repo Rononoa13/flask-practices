@@ -1,10 +1,8 @@
 from flask import Flask, render_template
+from home import home
 
 app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template("home.html")
+app.register_blueprint(home)
 
 app.route('/user')
 def user():

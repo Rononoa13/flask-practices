@@ -2,9 +2,9 @@
 
 {% block title %} 
 Home
-{% end block%}
+{% endblock %}
 
 {% block content %}
 <h1>This is the home page</h1>
-<img src="{{ url_for('static'), filename='images/intro_to_flask.png' }}" alt="">
+<img src="{{ url_for('static', filename='images/intro_to_flask.png') }}" >
 {% endblock %}
