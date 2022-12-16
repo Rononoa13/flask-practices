@@ -1,31 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> Hello World !</h1>
-    <p> This is my first website from flask friday!</p>
-    <p>My favourite teacher is {{first_name}}</p>
+{% extends 'base.html' %}
 
-    <!-- <p>{{bold_text | safe}}</p> -->
-    <!-- {{bold_text | striptags}} -->
-    <p>{{bold_text | upper | striptags}}</p>
-    <h3>Favourite Pizza:</h3>
-    {% for toppings in favourite_pizza %}
+{% block content %}
 
-        {% if toppings == 13 %}
-            <li>{{toppings}}</li>
-        {% endif %}
-        
-    {% endfor %}
-    <br><br>
+<h1> Hello World !</h1>
+<p> This is my first website from flask friday!</p>
+<p>My favourite teacher is {{first_name}}</p>
 
-    {{favourite_pizza.1}}
-    
-    
-</body>
-</html>
+<!-- <p>{{bold_text | safe}}</p> -->
+<!-- {{bold_text | striptags}} -->
+<p>{{bold_text | upper | striptags}}</p>
+<h3>Favourite Pizza:</h3>
+{% for toppings in favourite_pizza %}
+
+{% if toppings == 13 %}
+<li>{{toppings}}</li>
+{% endif %}
+
+{% endfor %}
+<br><br>
+
+{{favourite_pizza.1}}
+
+{% endblock %}
