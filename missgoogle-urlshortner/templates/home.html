@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>URL shortner</h1>
+{% for message in get_flashed_messages() %}
+    <h2>{{ message }}</h2>
+{% endfor %}
+
+    <form action="/your-url" method="POST">
+        <label for="url">Website URL</label>
+        <input type="url" name="url" value="" required>
+        <br>
+        <!--  -->
+        <label for="code">Short Name</label>
+        <input type="text" name="code" value="" required>
+        <br>
+        <!--  -->
+        <input type="submit" value="Shorten">
+    </form>
+    <br>
+    <br>
+    <br>
+
+    <!-- Allow user to upload the file  -->
+
+    <form action="/your-url" method="POST" enctype="multipart/form-data">
+        <label for="file">File</label>
+        <input type="file" name="file" value="" required>
+        <br>
+        <!--  -->
+        <label for="code">Short Name</label>
+        <input type="text" name="code" value="" required>
+        <br>
+        <!--  -->
+        <input type="submit" value="Shorten">
+    </form>
+{% endblock %}
