@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% for meal in meals.meals %}
+<div class="card col-lg-4 col-md-4" style="width: 18rem;">
+    <img src="{{meal.strMealThumb}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ meal.strMeal }}</h5>
+        <p class="card-text"></p>
+        <a href="{{ url_for('single_meal', meal_id=meal.idMeal) }}" class="btn btn-primary">Details</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock%}
